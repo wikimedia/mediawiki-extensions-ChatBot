@@ -1,0 +1,269 @@
+{
+	"name": "ChatBot",
+	"version": "2.0",
+	"license-name": "GPL-3.0-only",
+	"author": [
+		"[https://www.hallowelt.com Hallo Welt! GmbH]"
+	],
+	"url": "https://www.mediawiki.org/wiki/Extension:ChatBot",
+	"descriptionmsg": "chatbot-desc",
+	"requires": {
+		"MediaWiki": ">= 1.43.0",
+		"extensions": {
+			"PDFCreator": ">= 1.0.0",
+			"WikiRAG": ">= 1.0.0"
+		}
+	},
+	"MessagesDirs": {
+		"ChatBot": "i18n"
+	},
+	"AutoloadNamespaces": {
+		"ChatBot\\": "src/"
+	},
+	"TestAutoloadNamespaces": {
+		"ChatBot\\Tests\\": "tests/phpunit/"
+	},
+	"attributes": {
+		"BlueSpicePrivacy": {
+			"CookieConsentNativeMWCookies": {
+				"chatbot_attention_tracker": {
+					"group": "convenience",
+					"addPrefix": true
+				}
+			}
+		},
+		"PDFCreator": {
+			"ModuleProvider": {
+				"chatbot-pdf-export": {
+					"class": "ChatBot\\PdfExport\\ChatbotPdfExportModuleProvider",
+					"services": [
+						"PDFCreator.PageSpecFactory",
+						"PDFCreator.ExportPageFactory",
+						"PDFCreator.TemplateProviderFactory",
+						"PDFCreator.BackendFactory",
+						"PDFCreator.TargetFactory",
+						"PDFCreator.MetaDataFactory",
+						"PDFCreator.ExportHtmlBuilder",
+						"PDFCreator.PreProcessorFactory",
+						"PDFCreator.ProcessorFactory",
+						"PDFCreator.PostProcessorFactory",
+						"PDFCreator.StylesheetsFactory",
+						"PDFCreator.StyleBlocksFactory",
+						"PDFCreator.MediaWikiCommonCssProvider",
+						"MainConfig",
+						"TitleFactory",
+						"RedirectLookup"
+					]
+				}
+			}
+		},
+		"BlueSpiceFoundation": {
+			"ConfigDefinitionRegistry": {
+				"ChatBotName": "ChatBot\\ConfigDefinition\\ChatbotName::getInstance",
+				"ChatBotEnableSearchSummary": "ChatBot\\ConfigDefinition\\ChatBotEnableSearchSummary::getInstance"
+			}
+		},
+		"BlueSpiceExtendedSearch": {
+			"SearchCenterPluginModules": [ "ext.chatbot.search.integration" ]
+		},
+		"WikiRAG": {
+			"ContextProviders": {
+				"chat-prompts": {
+					"class": "ChatBot\\WikiRAG\\ContextProvider\\ChatPrompts"
+				},
+				"token-limit": {
+					"class": "ChatBot\\WikiRAG\\ContextProvider\\TokenLimits",
+					"services": [
+						"ChatBot.TokenUsage"
+					]
+				}
+			}
+		},
+		"BlueSpiceInstanceStatus": {
+			"InstanceStatusProvider": {
+				"chat-token-limit": {
+					"class": "ChatBot\\InstanceStatusProvider\\TokenLimit",
+					"services": [ "ChatBot.TokenUsage" ]
+				}
+			}
+		}
+	},
+	"Hooks": {
+		"UserLoggedIn": "setUserLoggedInFlag",
+		"MakeGlobalVariablesScript": "setUserLoggedInFlag",
+		"PageSaveComplete": "observePrompts",
+		"MediaWikiServices": "scheduleLimitUpdate",
+		"MWStakeRunJobsTriggerRegisterHandlers": "scheduleLimitUpdate",
+		"SkinAfterContent": "common-user-interface"
+	},
+	"HookHandlers": {
+		"common-user-interface": {
+			"class": "ChatBot\\HookHandler\\CommonUserInterface",
+			"services": [
+				"MainConfig"
+			]
+		},
+		"setUserLoggedInFlag": {
+			"class": "ChatBot\\HookHandler\\SetUserLoggedInFlag"
+		},
+		"observePrompts": {
+			"class": "ChatBot\\HookHandler\\PromptObserver",
+			"services": [
+				"WikiRAG.Scheduler"
+			]
+
+		},
+		"scheduleLimitUpdate": {
+			"class": "ChatBot\\HookHandler\\ScheduleLimitUpdate"
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "resources",
+		"remoteExtPath": "ChatBot/resources"
+	},
+	"ResourceModules": {
+		"ext.chatbot": {
+			"scripts": [
+				"js/dist/hallowelt.chatbot.bundle.js"
+			],
+			"styles": [
+				"styles/chatBot.less"
+			],
+			"messages": [
+				"chatbot-greeting",
+				"chatbot-api-error",
+				"chatbot-api-load-error",
+				"chatbot-api-stream-error",
+				"chatbot-answer-processing",
+				"chatbot-missing-config",
+				"chatbot-api-references-not-found-error",
+				"chatbot-reference-list-button",
+				"chatbot-close-popup-info-label",
+				"chatbot-close-popup-close-and-export-btn-label",
+				"chatbot-close-popup-close-btn-label",
+				"chatbot-close-popup-cancel-btn-label",
+				"chatbot-export-popup-title",
+				"chatbot-export-popup-export-button",
+				"chatbot-export-popup-cancel-button",
+				"chatbot-export-popup-format-label",
+				"chatbot-close-popup-header",
+				"chatbot-export-error",
+				"chatbot-copy-to-clipboard",
+				"chatbot-attachments-popup-header",
+				"chatbot-reference-attachments",
+				"chatbot-all-documents-popup-header",
+				"chatbot-copy-button-title",
+				"chatbot-restore-session-text",
+				"chatbot-status-mode-side-by-side",
+				"chatbot-status-mode-normal",
+				"chatbot-status-mode-full-screen",
+				"chatbot-size-popup-title",
+				"chatbot-size-large-button-title",
+				"chatbot-size-medium-button-title",
+				"chatbot-size-small-button-title",
+				"chatbot-restore-error",
+				"chatbot-connection-error",
+				"chatbot-connection-error-final",
+				"chatbot-save-page-button-title",
+				"chatbot-save-page-saved-label",
+				"chatbot-save-page-resources-label",
+				"chatbot-api-error-topic-api-label",
+				"chatbot-external-error-token-limit-reached"
+			],
+			"dependencies": [
+				"mwstake.component.tokenAuthenticator",
+				"ext.chatbot.util"
+			]
+		},
+		"ext.chatbot.attention.seeker": {
+			"scripts": [
+				"js/ext.chatbot.attention.seeker.js"
+			]
+		},
+		"ext.chatbot.search.integration": {
+			"scripts": [
+				"js/ext.chatbot.search.integration.js",
+				"js/ui/AISummary.js",
+				"js/lib/marked.min.js"
+			],
+			"styles": [
+				"styles/searchCenter.less"
+			],
+			"messages": [
+				"chatbot-search-ai-result-summary-label",
+				"chatbot-search-ai-result-expand-btn-label",
+				"chatbot-search-ai-result-resources-label",
+				"chatbot-search-ai-summary-default-empty-label",
+				"chatbot-external-error-token-limit-reached"
+			],
+			"dependencies": [
+				"oojs-ui",
+				"ext.chatbot.util"
+			]
+		},
+		"ext.chatbot.util": {
+			"packageFiles": [
+				"js/ext.chatbot.util.js",
+				{
+					"name": "config.json",
+					"callback": "ChatBot\\ClientConfig::getConfig"
+				}
+			],
+			"dependencies": [
+				"mwstake.component.tokenAuthenticator"
+			]
+		}
+	},
+	"RestRoutes": [
+		{
+			"path": "/chatbot/export-pdf",
+			"method": "POST",
+			"class": "ChatBot\\Rest\\CreateChatPdf",
+			"services": [
+				"ChatMessageFactory",
+				"TitleFactory",
+				"PDFCreator",
+				"PDFCreator.ExportSpecificationFactory"
+			]
+		},
+		{
+			"path": "/chatbot/convert-md",
+			"method": "POST",
+			"class": "ChatBot\\Rest\\ConvertMarkdownToWikitextHandler"
+		}
+	],
+	"ServiceWiringFiles": [
+		"includes/ServiceWiring.php"
+	],
+	"config": {
+		"ChatBotService": {
+			"value": {
+				"url": ""
+			},
+			"description": "Connection parameters for the chatbot service"
+		},
+		"ChatBotName": {
+			"value": "Wiki Bot",
+			"description": "Visible name of chatbot"
+		},
+		"ChatBotTokenLimit": {
+			"value": -1,
+			"description": "Maximum number of tokens for LLM calls during a calendar month. -1 means no limit"
+		},
+		"ChatBotOrganizationId": {
+			"value": null,
+			"description": "ID used to identify any request to chatbot service as belonging to a specific organization. If null, set to wiki ID"
+		},
+		"ChatBotCreditConversionRate": {
+			"value": 1000,
+			"description": "Number of tokens that correspond to one credit in the billing system"
+		},
+		"ChatBotEnableSearchSummary": {
+			"value": true,
+			"description": "Whether to enable the feature that shows an AI-generated summary of the search results in the Search Center"
+		}
+	},
+	"callback": "mwsInitComponents",
+	"load_composer_autoloader": true,
+	"manifest_version": 2
+}

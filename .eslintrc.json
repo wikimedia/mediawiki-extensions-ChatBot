@@ -1,0 +1,16 @@
+{
+	"root": true,
+	"extends": [
+		"wikimedia/language/es2022"
+	],
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"sourceType": "module",
+		"ecmaVersion": 2017
+	},
+	"plugins": [
+		"@typescript-eslint"
+	],
+	"rules": {
+	}
+}
