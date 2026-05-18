@@ -33,14 +33,15 @@ ext.chatbot.util = {
 		}
 	},
 	directQuestion: async ( question, callback ) => {
-		await ext.chatbot.util.executeWebSocketQuery( 'one-off', {
+		await ext.chatbot.util.executeWebSocketQuery( 'oneoff', {
 			msg: question,
 		}, callback );
 	},
 	searchSummary: async ( term, results, callback ) => {
-		await ext.chatbot.util.executeWebSocketQuery( 'search-summary', {
+		await ext.chatbot.util.executeWebSocketQuery( 'operation', {
 			msg: '',
 			meta: {
+				action: 'search-summary',
 				term: term,
 				results: results
 			}

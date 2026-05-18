@@ -186,7 +186,7 @@ export default class Api extends EventEmitter {
 	public async sendMessage( query: string, sessionId: string ) {
 		if ( this.socket && this.socket.readyState === WebSocket.OPEN ) {
 			this.socket.send( JSON.stringify( {
-				action: 'user-message',
+				action: 'message',
 				msg: query,
 				session_id: sessionId
 			} ) );
