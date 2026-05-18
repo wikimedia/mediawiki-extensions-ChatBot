@@ -125,19 +125,14 @@ export default class MessageReceived extends Message {
 		copyBtn.setAttribute( "title", mw.message( 'chatbot-copy-button-title' ).text() );
 		btns.appendChild( copyBtn );
 
-		const saveAsPageBtn = this.createSaveAsPageButton();
-		saveAsPageBtn.setAttribute( 'title', mw.message( 'chatbot-save-page-button-title' ).text() );
-		btns.appendChild( saveAsPageBtn );
-		this.messageContainer.appendChild( btns );
-	}
-
-	public appendSavedPageLink( href: string, title: string ): void {
-		const pageLink = document.createElement( 'a' );
-		pageLink.classList.add( 'chatbot-saved-msg-link' );
-		pageLink.textContent = 'Message saved to ' + title;
-		pageLink.setAttribute( 'href', href );
-		
-		this.messageContainer.appendChild( pageLink );
+		mw.user.getRights().done( ( rights: string[] ) => {
+			if ( rights.indexOf( 'edit' ) !== -1 ) {
+				const saveAsPageBtn = this.createSaveAsPageButton();
+				saveAsPageBtn.setAttribute( 'title', mw.message( 'chatbot-save-page-button-title' ).text() );
+				btns.appendChild( saveAsPageBtn );
+			}
+			this.messageContainer.appendChild( btns );
+		} );
 	}
 
 	private createCopyButton(): HTMLElement {
