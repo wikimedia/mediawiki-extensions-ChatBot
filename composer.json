@@ -15,6 +15,7 @@
 	},
 	"require": {
 		"composer/installers": "~1.0|~2",
+		"mwstake/mediawiki-component-commonuserinterface": "~8",
 		"mwstake/mediawiki-component-token-authenticator": "~1"
 	},
 	"require-dev": {
