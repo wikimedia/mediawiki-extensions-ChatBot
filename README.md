@@ -43,3 +43,8 @@ For displaying limits, we use credits, to set conversion rate, set
 ```php
 $GLOBALS['wgChatBotCreditConversionRate] = 1000; // 1000 tokens = 1 credit (default)
 ```
+
+This will show 1000 tokens available if limit is set to 1 million tokens.
+
+Token limits are passed from the wiki to the AI service via RAG mechanism. Updated once a day via runJobs.
+Limits shown on `Special:InstanceStatus` are coming from the AI service directly, so it may take up to 24 hours to reflect changes.
