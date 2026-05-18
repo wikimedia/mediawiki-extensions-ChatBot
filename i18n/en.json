@@ -46,7 +46,7 @@
 	"chatbot-status-mode-side-by-side": "View mode side by side",
 	"chatbot-status-mode-normal": "View mode normal",
 	"chatbot-status-mode-full-screen": "View mode full screen",
-	"chatbot-footer-disclaimer": "By using the Chatbot, I am accepting [[Chatbot-FAQ|the terms of use]].",
+	"chatbot-footer-disclaimer": "By using the Chatbot, I am accepting [[Project:Chatbot FAQ|the terms of use]].",
 	"chatbot-size-popup-title": "Change Chatbot size",
 	"chatbot-size-large-button-title": "Select full size view mode",
 	"chatbot-size-medium-button-title": "Select view mode side by side",

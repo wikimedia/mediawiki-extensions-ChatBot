@@ -15,7 +15,8 @@
 @header-height: 92px;
 @line-height: 21px;
 @circle-size: 9px;
-@circle: radial-gradient(circle, @primary-color floor(@circle-size / 2), transparent floor(@circle-size / 2) + 1);
+@circle-radius: 4px;
+@circle: radial-gradient(circle, @primary-color @circle-radius, transparent @circle-radius + 1);
 @error-color-fg: var(--color-base, #202122);
 @error-color-bg: var(--background-color-error-subtle, #ffe9e5);
 @error-color-border: var(--border-color-error, #f54739);
