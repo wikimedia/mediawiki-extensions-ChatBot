@@ -1,0 +1,59 @@
+<div id="chat" role="region" aria-label="chatbot" style="display: none">
+	<div id="chatContainer" role="dialog" class="cdx-dialog" aria-modal="true">
+		<div class="chat-header cdx-dialog__header cdx-dialog__header--default">
+			<div class="header-top-row">
+			<h2 class="cdx-dialog__header__title">{{headline}}</h2>
+			<div class="button-bar">
+				<div>
+					<button id="resizeChat" class="cdx-button cdx-button--icon-only cdx-button--weight-quiet" title="{{resize_button}}">
+						<span
+							class="cdx-button__icon chat-btn-icon cdx-css-icon--resize"
+							aria-hidden="true"
+						></span>
+					</button>
+				</div>
+				<div>
+					<button id="minimizeChat" class="cdx-button cdx-button--action-default cdx-button--weight-quiet cdx-button--size-medium cdx-button--icon-only" title="{{minimize_button}}">
+						<span
+							class="cdx-button__icon chat-btn-icon cdx-css-icon--minimize"
+							aria-hidden="true"
+						></span>
+					</button>
+				</div>
+				<div>
+					<button id="closeChat" class="cdx-button cdx-button--action-default cdx-button--weight-quiet cdx-button--size-medium cdx-button--icon-only cdx-dialog__header__close-button" title="{{close_button}}">
+						<span
+							class="cdx-button__icon cdx-css-icon--close"
+							aria-hidden="true"
+						></span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="chat-body cdx-dialog__body cdx-scrollable-container" id="chatBody"></div>
+	<div id="loadingIndicator" class="hidden">
+		<div class="spinner"></div>
+	</div>
+	<div class="chat-footer">
+		<div id="errorMessageContainer" role="alert">
+			<button id="dismissError" title="{{dismiss_error_button}}" class="cdx-button cdx-button--icon-only cdx-button--weight-quiet"></button>
+		</div>
+		<div id="followUpPanel" class="follow-up-options hidden"></div>
+		<div class="send-message-container cdx-text-area">
+			<textarea class="cdx-text-area__textarea" rows="3" id="messageInput" placeholder="{{input_placeholder}}"></textarea>
+			<button id="sendMessage" title="{{send_button}}" class="cdx-button cdx-button--icon-only cdx-button--weight-quiet cdx-text-area__icon cdx-text-area__end-icon">
+				<span
+					class="cdx-button__icon chat-btn-icon cdx-css-icon--send"
+					aria-hidden="true"
+				></span>
+			</button>
+		</div>
+	</div>
+	<div id="restoreSessionMessage">
+		<div>{{restore_session}}</div>
+		<div class="spinner"></div>
+	</div>
+	</div>
+	<button id="maximizeChat" title="{{maximize_button}}" class="cdx-button cdx-button--icon-only cdx-button--weight-quiet"></button>
+</div>
