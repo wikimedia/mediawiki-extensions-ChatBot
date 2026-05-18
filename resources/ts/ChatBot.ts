@@ -76,6 +76,7 @@ export default class ChatBot {
 
 		this.messageFactory.createSentMessage( message );
 
+		this.dom.clearMessageInput();
 		this.dom.disableSendMessages();
 		this.dom.setAnswerIsBeingProcessedMessage( true );
 
