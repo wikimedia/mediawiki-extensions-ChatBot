@@ -192,7 +192,6 @@ class CreateChatPdf extends SimpleHandler {
 	}
 
 	/**
-	 *
 	 * @param DomDocument $doc
 	 *
 	 * @return DOMDocumentFragment
