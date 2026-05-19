@@ -1,0 +1,26 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"chatbot-desc": "ChatBot",
+	"chatbot-headline-text": "Chatbot",
+	"chatbot-input-placeholder": "Inviar un message",
+	"chatbot-send-button-title": "Inviar",
+	"chatbot-export-button-title": "Exportar chat",
+	"chatbot-export-popup-title": "Exportar chat",
+	"chatbot-export-popup-export-button": "Exportar",
+	"chatbot-export-popup-cancel-button": "Cancellar",
+	"chatbot-export-popup-format-label": "Formato",
+	"chatbot-export-error": "Nihil a exportar",
+	"chatbot-resize-button-title": "Redimensionar chat",
+	"chatbot-maximize-button-title": "Maximisar chat",
+	"chatbot-minimize-button-title": "Minimisar chat",
+	"chatbot-close-button-title": "Clauder chat e deler historia de chat",
+	"chatbot-copy-button-title": "Copiar responsa",
+	"chatbot-banner-help-button": "Ir al FAQ",
+	"chatbot-banner-close-button": "Clauder bandiera informative",
+	"chatbot-restore-session-text": "Restaurar session",
+	"chatbot-reference-list-button": "Monstrar referentias"
+}

@@ -1,0 +1,39 @@
+{
+	"@metadata": {
+		"authors": [
+			"Siebrand"
+		]
+	},
+	"chatbot-desc": "ChatBot",
+	"chatbot-headline-text": "Chatbot",
+	"chatbot-input-placeholder": "Bericht verzenden",
+	"chatbot-send-button-title": "Verzenden",
+	"chatbot-export-button-title": "Chat exporteren",
+	"chatbot-export-popup-title": "Chat exporteren",
+	"chatbot-export-popup-export-button": "Exporteren",
+	"chatbot-export-popup-cancel-button": "Annuleren",
+	"chatbot-export-popup-format-label": "Opmaak",
+	"chatbot-export-error": "Niets te exporteren",
+	"chatbot-resize-button-title": "Chatafmetingen aanpassen",
+	"chatbot-maximize-button-title": "Chat maximaliseren",
+	"chatbot-minimize-button-title": "Chat minimaliseren",
+	"chatbot-close-button-title": "Chat sluiten en chatgeschiedenis verwijderen",
+	"chatbot-copy-button-title": "Antwoord kopiëren",
+	"chatbot-banner-close-button": "Info-banner sluiten",
+	"chatbot-restore-session-text": "Sessie herstellen",
+	"chatbot-reference-list-button": "Verwijzingen weergeven",
+	"chatbot-answer-processing": "Antwoord wordt verwerkt",
+	"chatbot-greeting": "Hallo, waar kan ik u mee helpen?",
+	"chatbot-api-error": "Fout: $1",
+	"chatbot-api-load-error": "Fout bij het laden vn ChatBot: geen verbinding",
+	"chatbot-pdf-title": "Naar PDF exporteren",
+	"chatbot-close-popup-close-and-export-btn-label": "Exporteren en sluiten",
+	"chatbot-close-popup-close-btn-label": "Sluiten",
+	"chatbot-close-popup-cancel-btn-label": "Annuleren",
+	"chatbot-close-popup-header": "Chatbot sluiten",
+	"chatbot-dismiss-error-button-title": "Foutmeldingen sluiten",
+	"chatbot-copy-to-clipboard": "Antwoord gekopieerd",
+	"chatbot-attachments-popup-header": "Bijlagen",
+	"chatbot-reference-attachments": "Bijlagen weergeven",
+	"chatbot-all-documents-popup-header": "Lijst met gevonden bronnen"
+}
