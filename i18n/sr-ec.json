@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Milicevic01"
+		]
+	},
+	"chatbot-export-popup-cancel-button": "Откажи",
+	"chatbot-export-popup-format-label": "Формат",
+	"chatbot-api-error": "Грешка: $1",
+	"chatbot-search-ai-result-expand-btn-label": "Прочитај још"
+}
