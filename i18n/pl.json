@@ -1,0 +1,30 @@
+{
+	"@metadata": {
+		"authors": [
+			"G3raltJJ"
+		]
+	},
+	"chatbot-desc": "ChatBot",
+	"chatbot-headline-text": "ChatBot",
+	"chatbot-input-placeholder": "Wyślij wiadomość",
+	"chatbot-send-button-title": "Wyślij",
+	"chatbot-export-button-title": "Eksportuj czat",
+	"chatbot-export-popup-title": "Eksportuj czat",
+	"chatbot-export-popup-export-button": "Eksportuj",
+	"chatbot-export-popup-cancel-button": "Anuluj",
+	"chatbot-export-popup-format-label": "Format",
+	"chatbot-export-error": "Nie ma tu nic do wyeksportowania",
+	"chatbot-resize-button-title": "Zmień rozmiar czatu",
+	"chatbot-maximize-button-title": "Zmaksymalizuj czat",
+	"chatbot-minimize-button-title": "Zminimalizuj czat",
+	"chatbot-close-button-title": "Zamknij czat i usuń historię rozmowy",
+	"chatbot-copy-button-title": "Skopiuj odpowiedź",
+	"chatbot-banner-help-button": "Przejdź do FAQ",
+	"chatbot-banner-close-button": "Zamknij banner informacyjny",
+	"chatbot-restore-session-text": "Przywróć sesję",
+	"chatbot-reference-list-button": "Pokaż odniesienia",
+	"chatbot-answer-processing": "Odpowiedź jest przetwarzana",
+	"chatbot-greeting": "Witaj, jak mogę ci pomóc?",
+	"chatbot-api-error": "Błąd: $1",
+	"chatbot-api-load-error": "Błąd ładowania ChatBota: brak połączenia"
+}
