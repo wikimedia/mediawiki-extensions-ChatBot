@@ -1,0 +1,35 @@
+{
+	"@metadata": {
+		"authors": [
+			"Volvox"
+		]
+	},
+	"chatbot-desc": "ChatBot",
+	"chatbot-headline-text": "Chatbot",
+	"chatbot-send-button-title": "Schécken",
+	"chatbot-export-button-title": "Chat exportéieren",
+	"chatbot-export-popup-title": "Chat exportéieren",
+	"chatbot-export-popup-export-button": "Exportéieren",
+	"chatbot-export-popup-cancel-button": "Ofbriechen",
+	"chatbot-export-popup-format-label": "Format",
+	"chatbot-export-error": "Näischt fir z'exportéieren",
+	"chatbot-close-button-title": "Chat zoumaachen an Chathistorique läschen",
+	"chatbot-copy-button-title": "Äntwert kopéieren",
+	"chatbot-restore-session-text": "Sessioun restauréieren",
+	"chatbot-greeting": "Moien, woubäi kann ech Iech hëllefen?",
+	"chatbot-api-error": "Feeler: $1",
+	"chatbot-missing-config": "Feeler beim Luede vun ChatBot: Konfiguratioun feelt",
+	"chatbot-pdf-title": "PDF-Export",
+	"chatbot-close-popup-close-and-export-btn-label": "Exportéieren & Zoumaachen",
+	"chatbot-close-popup-close-btn-label": "Zoumaachen",
+	"chatbot-close-popup-cancel-btn-label": "Ofbriechen",
+	"chatbot-close-popup-header": "Chatbot zoumaachen",
+	"chatbot-dismiss-error-button-title": "Feelermessage zoumaachen",
+	"chatbot-copy-to-clipboard": "Äntwert kopéiert",
+	"chatbot-config-name-label": "Chatbot-Numm",
+	"chatbot-search-ai-result-summary-label": "KI-Resümmee",
+	"chatbot-search-ai-result-expand-btn-label": "Méi liesen",
+	"chatbot-restore-error": "D'Sessioun konnt net restauréiert ginn, et gëtt eng nei Sessioun gestart",
+	"chatbot-save-page-button-title": "Äntwert als Wikisäit späicheren",
+	"chatbot-save-page-saved-label": "Message ënner [[$1|$2]] gespäichert"
+}
