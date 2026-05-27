@@ -17,7 +17,7 @@ use MediaWiki\Html\Html;
 use MediaWiki\Message\Message;
 use MediaWiki\Rest\Response;
 use MediaWiki\Rest\SimpleHandler;
-use TitleFactory;
+use MediaWiki\Title\TitleFactory;
 use Wikimedia\ParamValidator\ParamValidator;
 
 class CreateChatPdf extends SimpleHandler {
