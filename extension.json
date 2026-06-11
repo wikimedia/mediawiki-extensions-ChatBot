@@ -88,12 +88,14 @@
 			}
 		}
 	},
+	"ExtensionFunctions": [
+		"ChatBot\\UpdateLimitsCron::register"
+	],
 	"Hooks": {
 		"UserLoggedIn": "setUserLoggedInFlag",
 		"MakeGlobalVariablesScript": "setUserLoggedInFlag",
 		"PageSaveComplete": "observePrompts",
 		"MediaWikiServices": "scheduleLimitUpdate",
-		"MWStakeRunJobsTriggerRegisterHandlers": "scheduleLimitUpdate",
 		"SkinAfterContent": "common-user-interface"
 	},
 	"HookHandlers": {
@@ -111,10 +113,6 @@
 			"services": [
 				"WikiRAG.Scheduler"
 			]
-
-		},
-		"scheduleLimitUpdate": {
-			"class": "ChatBot\\HookHandler\\ScheduleLimitUpdate"
 		}
 	},
 	"ResourceFileModulePaths": {
