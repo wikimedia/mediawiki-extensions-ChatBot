@@ -9,6 +9,7 @@
 		"font-family-no-missing-generic-family-keyword": null,
 		"no-descending-specificity": null,
 		"selector-class-pattern": null,
-		"selector-max-id": null
+		"selector-max-id": null,
+		"declaration-property-value-keyword-no-deprecated": null
 	}
 }
