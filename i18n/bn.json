@@ -1,0 +1,36 @@
+{
+	"@metadata": {
+		"authors": [
+			"আফতাবুজ্জামান"
+		]
+	},
+	"chatbot-desc": "চ্যাটবট",
+	"chatbot-headline-text": "চ্যাটবট",
+	"chatbot-input-placeholder": "একটি বার্তা পাঠান",
+	"chatbot-send-button-title": "পাঠান",
+	"chatbot-export-button-title": "চ্যাট রপ্তানি করুন",
+	"chatbot-export-popup-title": "চ্যাট রপ্তানি করুন",
+	"chatbot-export-popup-export-button": "রপ্তানি করুন",
+	"chatbot-export-popup-cancel-button": "বাতিল",
+	"chatbot-copy-button-title": "উত্তর অনুলিপি করুন",
+	"chatbot-banner-close-button": "তথ্যের ব্যানার বন্ধ করুন",
+	"chatbot-restore-session-text": "অধিবেশন পুনরুদ্ধার করুন",
+	"chatbot-reference-list-button": "তথ্যসূত্র দেখান",
+	"chatbot-answer-processing": "উত্তর প্রক্রিয়াধীন",
+	"chatbot-greeting": "শুভেচ্ছা নিন, আমি কীভাবে আপনাকে সাহায্য করতে পারি?",
+	"chatbot-api-error": "ত্রুটি: $1",
+	"chatbot-api-load-error": "চ্যাটবট লোড করতে সমস্যা: সংযোগ নেই",
+	"chatbot-close-popup-close-btn-label": "বন্ধ করুন",
+	"chatbot-close-popup-cancel-btn-label": "বাতিল",
+	"chatbot-close-popup-header": "চ্যাটবট বন্ধ করুন",
+	"chatbot-dismiss-error-button-title": "ত্রুটি বার্তা বন্ধ করুন",
+	"chatbot-attachments-popup-header": "সংযুক্তি",
+	"chatbot-reference-attachments": "সংযুক্তি দেখান",
+	"chatbot-config-name-label": "চ্যাটবটের নাম",
+	"chatbot-config-name-help": "ইন্টারফেসে চ্যাটবটের দৃশ্যমান নাম",
+	"chatbot-search-ai-result-summary-label": "এআই সারাংশ",
+	"chatbot-search-ai-result-expand-btn-label": "আরও পড়ুন",
+	"chatbot-connection-error-final": "চ্যাট সার্ভারের সঙ্গে কোনও সংযোগ নেই",
+	"chatbot-save-page-button-title": "উইকিপাতা হিসেবে উত্তরটি সংরক্ষণ করুন",
+	"chatbot-save-page-saved-label": "[[$1|$2]]-এ বার্তা সংরক্ষণ করা হয়েছে"
+}
