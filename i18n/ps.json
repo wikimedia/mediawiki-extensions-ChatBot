@@ -57,8 +57,6 @@
 	"chatbot-search-ai-result-expand-btn-label": "نور لوستل",
 	"chatbot-restore-error": "د ناستې بيارغونې کې پاتې راغی، د نوې غونډې پيلول",
 	"chatbot-connection-error": "بنډار پالنگر سره اړيکه نشته، بياهڅه کول",
-	"chatbot-prompts-contextualize": "پوښتنه مه ځوابوئ، که اړتيا وي، بيايې سمه کړئ او که نه؛ نو په خپل حال يې پرېږدئ.",
-	"chatbot-prompts-main": "تاسو د مېډياويکي په یوه نمونه کې د پوښتنو او ځوابونو یو ماهر غونډال یاست او تاسو د ویکي د منځپانگې پربنسټ پوهه چمتو کوئ",
 	"chatbot-connection-error-final": "بنډار پالنگر سره نښلېدا نشته",
 	"chatbot-save-page-button-title": "د ويکي‌مخ په توگه ځواب خوندي‌کول",
 	"chatbot-save-page-saved-label": "پيغام [[$1|$2]] کې خوندي شو",

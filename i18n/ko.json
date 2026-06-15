@@ -58,8 +58,6 @@
 	"chatbot-search-ai-result-expand-btn-label": "더 보기",
 	"chatbot-restore-error": "세션 복구에 실패하여 새 세션을 시작합니다.",
 	"chatbot-connection-error": "채팅 서버에 연결할 수 없습니다. 다시 시도하는 중...",
-	"chatbot-prompts-contextualize": "Do NOT answer the question, just reformulate it if needed and otherwise return it as is.",
-	"chatbot-prompts-main": "You are an expert Q&A system operating inside a MediaWiki instance and you are providing knowledge based on the content of the wiki",
 	"chatbot-connection-error-final": "채팅 서버에 연결할 수 없습니다",
 	"chatbot-save-page-button-title": "답변을 위키문서로 저장",
 	"chatbot-save-page-saved-label": "메시지가 [[$1|$2]]에 저장되었습니다",

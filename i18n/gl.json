@@ -57,8 +57,6 @@
 	"chatbot-search-ai-result-expand-btn-label": "Ler máis",
 	"chatbot-restore-error": "Produciuse un erro ao restaurar a sesión; iníciase unha sesión nova",
 	"chatbot-connection-error": "Non hai conexión ao servidor de charlas; reintentando...",
-	"chatbot-prompts-contextualize": "NON respondas a pregunta. Simplemente reformúlaa se fose necesario e, en caso contrario, devólvea intacta.",
-	"chatbot-prompts-main": "Es un sistema de preguntas e respostas que opera dentro dunha instancia de MediaWiki e proporcionas coñecemento en base ao contido do wiki",
 	"chatbot-connection-error-final": "Non hai conexión ao servidor de charla",
 	"chatbot-save-page-button-title": "Gardar a resposta como unha páxina wiki",
 	"chatbot-save-page-saved-label": "Gardouse a mensaxe en «[[$1|$2]]»",

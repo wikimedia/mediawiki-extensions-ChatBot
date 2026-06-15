@@ -57,8 +57,6 @@
 	"chatbot-search-ai-result-expand-btn-label": "Прочитајте повеќе",
 	"chatbot-restore-error": "Не успеав да ја повратам седницата; отпочнувам нова",
 	"chatbot-connection-error": "Не сте поврзани со разговорниот опслужувач, пробувам одново...",
-	"chatbot-prompts-contextualize": "Do NOT answer the question, just reformulate it if needed and otherwise return it as is.",
-	"chatbot-prompts-main": "You are an expert Q&A system operating inside a MediaWiki instance and you are providing knowledge based on the content of the wiki",
 	"chatbot-connection-error-final": "Не сте поврзани со разговорниот опслужувач",
 	"chatbot-save-page-button-title": "Зачувај го одговорот како викистраница",
 	"chatbot-save-page-saved-label": "Пораката е зачувана во [[$1|$2]]",

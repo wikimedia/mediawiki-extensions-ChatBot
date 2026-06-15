@@ -57,8 +57,6 @@
 	"chatbot-search-ai-result-expand-btn-label": "Leger plus",
 	"chatbot-restore-error": "Le restauration del session ha fallite. Un nove session se initia",
 	"chatbot-connection-error": "Necun connexion al servitor de chat, reproba…",
-	"chatbot-prompts-contextualize": "Do NOT answer the question, just reformulate it if needed and otherwise return it as is.",
-	"chatbot-prompts-main": "You are an expert Q&A system operating inside a MediaWiki instance and you are providing knowledge based on the content of the wiki",
 	"chatbot-connection-error-final": "Necun connexion al servitor de chat",
 	"chatbot-save-page-button-title": "Salveguardar le responsa como pagina wiki",
 	"chatbot-save-page-saved-label": "Message salveguardate in [[$1|$2]]",
