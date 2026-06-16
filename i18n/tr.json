@@ -57,8 +57,6 @@
 	"chatbot-search-ai-result-expand-btn-label": "Devamını oku",
 	"chatbot-restore-error": "Oturum geri yüklenemedi, yeni bir oturum başlatılıyor",
 	"chatbot-connection-error": "Sohbet sunucusuna bağlantı kurulamadı, yeniden deniyor...",
-	"chatbot-prompts-contextualize": "Soruyu CEVAPLAMAYIN, gerekirse yeniden düzenleyin, gerekirse olduğu gibi bırakın.",
-	"chatbot-prompts-main": "Bir MediaWiki sunucusu içinde çalışan uzman bir soru cevap sistemisiniz ve viki içeriğine dayalı bilgiler sunuyorsunuz",
 	"chatbot-connection-error-final": "Sohbet sunucusuna bağlanılanamıyor",
 	"chatbot-save-page-button-title": "Cevabı viki sayfası olarak kaydet",
 	"chatbot-save-page-saved-label": "Mesaj, [[$1|$2]] sayfasına kaydedildi",

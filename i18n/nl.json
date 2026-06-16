@@ -58,8 +58,6 @@
 	"chatbot-search-ai-result-expand-btn-label": "Meer lezen",
 	"chatbot-restore-error": "Het herstellen van de sessie is mislukt. Er wordt een nieuwe sessie gestart",
 	"chatbot-connection-error": "Geen verbinding met de chatserver, opnieuw proberen...",
-	"chatbot-prompts-contextualize": "Do NOT answer the question, just reformulate it if needed and otherwise return it as is.",
-	"chatbot-prompts-main": "You are an expert Q&A system operating inside a MediaWiki instance and you are providing knowledge based on the content of the wiki",
 	"chatbot-connection-error-final": "Geen verbinding met de chatserver",
 	"chatbot-save-page-button-title": "Antwoord opslaan als wikipagina",
 	"chatbot-save-page-saved-label": "Bericht opgeslagen als [[$1|$2]]",
