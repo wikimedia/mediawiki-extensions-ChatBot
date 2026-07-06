@@ -1,8 +1,11 @@
 import EventEmitter from "events";
+// noinspection ES6UnusedImports
+import hook from "types-mediawiki/mw/hook";
 
 export interface SourceData {
 	display_title: string
-	identifier: string
+	identifier: string,
+	url: string
 }
 
 export default class Source extends EventEmitter {
@@ -13,10 +16,14 @@ export default class Source extends EventEmitter {
 
 	public docRefId: number;
 
+	private wikiId: string;
+	private namespaceId: number;
+	private titleText: string;
+
 	public constructor( data: SourceData, docRefId: number ) {
 		super();
 		this.title = this.getTitleFromIdentifier( data );
-		this.url = this.title.getUrl( '' );
+		this.url = data.url;
 		this.docRefId = docRefId;
 	}
 
@@ -24,11 +31,11 @@ export default class Source extends EventEmitter {
 		return this.getLink( `[${ this.docRefId }]` );
 	}
 
-	public getLinkListRefId(): string {
+	public getLinkListRefId(): HTMLAnchorElement {
 		return this.getHtmlLink( `[${ this.docRefId }]` );
 	}
 
-	public getLinkListItem(): string {
+	public getLinkListItem(): HTMLAnchorElement {
 		return this.getHtmlLink( this.title.getMainText(), 'reference-link' );
 	}
 
@@ -36,29 +43,43 @@ export default class Source extends EventEmitter {
 		return `[${ text }](${ this.url } "${ this.title.getPrefixedText() }")`;
 	}
 
-	private getHtmlLink( text: string, cls?: string ): string {
+	private getHtmlLink( text: string, cls?: string ): HTMLAnchorElement {
 		const classes = cls ? [ cls ] : [];
 		if ( this.title.exists() === false ) {
 			classes.push( 'missing' );
 		}
-		const clsString = `class="cdx-docs-link ${ classes }"`;
+		const clsString = `cdx-docs-link ${ classes }`;
 
-		return `<a title="${ this.title.getPrefixedText() }" ${ clsString } href="${ this.url }">${ text }</a>`;
+		const anchor = document.createElement( 'a' );
+		anchor.href = this.title.getUrl( '' );
+		anchor.title = this.title.getPrefixedText();
+		anchor.className = clsString;
+		anchor.textContent = text;
+
+		const linkData = {
+			wikiId: this.wikiId,
+			namespaceId: this.namespaceId,
+			titleText: this.titleText,
+			url: this.url,
+			anchor: anchor,
+			title: this.title
+		};
+		if ( this.wikiId !== mw.config.get( 'wgWikiID' ) ) {
+			mw.hook( 'chatbot.source.foreignWikiTitle' ).fire( linkData );
+		}
+		return linkData.anchor;
 	}
 
-	private getTitleFromIdentifier( data ) {
+	private getTitleFromIdentifier( data: SourceData ): mw.Title {
 		// Identifier is composed of three parts: {wiki_id}|{namespace_id}|{title}
 		const parts = ( data.identifier || '' ).split( '|' );
 		if ( parts.length !== 3 ) {
 			throw new Error( 'Invalid source identifier: ' + data.identifier || '(no identifier)' );
 		}
-		const wikiId = parts[ 0 ];
-		const namespaceId = parts[ 1 ];
-		const titleText = parts[ 2 ];
-		if ( wikiId !== mw.config.get( 'wgWikiID' ) ) {
-			throw new Error( 'Source from different wiki: ' + wikiId );
-		}
-		return mw.Title.makeTitle( namespaceId, titleText );
+		this.wikiId = parts[ 0 ];
+		this.namespaceId = Number( parts[ 1 ] );
+		this.titleText = parts[ 2 ];
+		return mw.Title.makeTitle( this.namespaceId, this.titleText );
 	}
 
 	toJSON() {
