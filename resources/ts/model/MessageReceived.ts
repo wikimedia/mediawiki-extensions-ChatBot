@@ -111,8 +111,8 @@ export default class MessageReceived extends Message {
 		this.sources = this.sourcesData.map( SourceFactory.createFromJson ) as Source[];
 
 		this.sources.sort( ( a, b ) => a.docRefId - b.docRefId ).forEach( ( reference ) => {
-			list.insertAdjacentHTML( 'beforeend', reference.getLinkListRefId() );
-			list.insertAdjacentHTML( 'beforeend', reference.getLinkListItem() );
+			list.appendChild( reference.getLinkListRefId() );
+			list.appendChild( reference.getLinkListItem() );
 		} );
 
 		this.messageTextContainer.appendChild( container );
