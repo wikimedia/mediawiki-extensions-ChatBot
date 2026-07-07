@@ -128,8 +128,8 @@ class TokenUsage {
 		}
 
 		return [
-			'tokenLimit' => $data['token_limit'],
-			'requestLimit' => $data['request_limit'],
+			'tokenLimit' => $data['token_limit'] ?? -1,
+			'requestLimit' => $data['request_limit'] ?? -1,
 			'tokenUsage' => $data['token_usage'] ?? 0,
 			'requestUsage' => $data['request_usage'] ?? 0,
 			'isReached' => $data['limit_reached'] ?? false,
