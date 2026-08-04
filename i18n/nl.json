@@ -30,7 +30,7 @@
 	"chatbot-api-load-error": "Fout bij het laden van ChatBot: geen verbinding",
 	"chatbot-api-stream-error": "Streaming wordt niet ondersteund op deze server. Wijzig de instelling in de configuratie met de variabele $GLOBALS['wgChatBotBackendStreamingSupport'].",
 	"chatbot-missing-config": "Fout bij het laden van ChatBot: configuratie ontbreekt",
-	"chatbot-pdf-title": "Naar PDF exporteren",
+	"chatbot-pdf-title": "Naar pdf exporteren",
 	"chatbot-pdf-banner-text": "Let op: dit antwoord is gegenereerd door AI. Het kan fouten bevatten en dient gecontroleerd te worden.",
 	"chatbot-api-references-not-found-error": "Referenties $1 niet gevonden in documenten",
 	"chatbot-banner-label": "De antwoorden van deze ondersteunende chatbot worden bepaald op basis van '''kunstmatige intelligentie'''.",
