@@ -3,8 +3,8 @@
 namespace ChatBot;
 
 use ChatBot\Process\ScheduleLimitUpdate;
-use ExtensionRegistry;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Registration\ExtensionRegistry;
 use MWStake\MediaWiki\Component\ProcessManager\ManagedProcess;
 use MWStake\MediaWiki\Component\WikiCron\WikiCronManager;
 
