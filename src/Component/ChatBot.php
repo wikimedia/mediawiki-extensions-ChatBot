@@ -2,8 +2,8 @@
 
 namespace ChatBot\Component;
 
-use IContextSource;
 use MediaWiki\Config\Config;
+use MediaWiki\Context\IContextSource;
 use MediaWiki\Html\TemplateParser;
 use MediaWiki\Message\Message;
 use MediaWiki\SpecialPage\SpecialPage;
