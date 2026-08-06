@@ -4,6 +4,7 @@ namespace ChatBot\InstanceStatusProvider;
 
 use BlueSpice\InstanceStatus\IStatusProvider;
 use ChatBot\TokenUsage;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Html\Html;
 use MediaWiki\Message\Message;
 
@@ -28,7 +29,7 @@ class TokenLimit implements IStatusProvider {
 	 * @return string
 	 */
 	public function getValue(): string {
-		$data = $this->tokenUsage->getCreditUsage( \RequestContext::getMain()->getUser() );
+		$data = $this->tokenUsage->getCreditUsage( RequestContext::getMain()->getUser() );
 		if ( !$data ) {
 			return '-';
 		}
