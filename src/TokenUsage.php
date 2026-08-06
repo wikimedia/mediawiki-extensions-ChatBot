@@ -2,7 +2,7 @@
 
 namespace ChatBot;
 
-use Config;
+use MediaWiki\Config\Config;
 use MediaWiki\Http\HttpRequestFactory;
 use MediaWiki\Permissions\Authority;
 use MWStake\MediaWiki\Component\TokenAuthenticator\UserTokenAuthenticator;
