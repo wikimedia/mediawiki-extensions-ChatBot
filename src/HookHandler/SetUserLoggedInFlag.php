@@ -3,8 +3,8 @@
 namespace ChatBot\HookHandler;
 
 use MediaWiki\Auth\Hook\UserLoggedInHook;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Hook\MakeGlobalVariablesScriptHook;
-use RequestContext;
 
 class SetUserLoggedInFlag implements UserLoggedInHook, MakeGlobalVariablesScriptHook {
 
