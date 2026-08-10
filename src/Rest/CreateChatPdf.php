@@ -268,6 +268,9 @@ class CreateChatPdf extends SimpleHandler {
 		return $fragment;
 	}
 
+	/**
+	 * @inheritDoc
+	 */
 	public function needsReadAccess() {
 		return false;
 	}
