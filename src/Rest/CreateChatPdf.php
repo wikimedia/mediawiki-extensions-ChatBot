@@ -192,7 +192,6 @@ class CreateChatPdf extends SimpleHandler {
 	}
 
 	/**
-	 *
 	 * @param DomDocument $doc
 	 *
 	 * @return DOMDocumentFragment
@@ -269,6 +268,9 @@ class CreateChatPdf extends SimpleHandler {
 		return $fragment;
 	}
 
+	/**
+	 * @inheritDoc
+	 */
 	public function needsReadAccess() {
 		return false;
 	}
