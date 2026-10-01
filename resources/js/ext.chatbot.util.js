@@ -5,7 +5,7 @@ const getServiceUrl = () => {
 	if ( !mw.config.get( 'chatBotServiceUrl' ) ) {
 		throw new Error( 'ext.chatbot.directResponse: ChatBot service URL is not configured.' );
 	}
-	return mw.config.get( 'chatBotServiceUrl' ).replace( /\/+$/, '' ) + '/';
+	return mw.config.get( 'chatBotServiceUrl' ).replace( /\/+$/, '' );
 };
 const makeServiceCall = async ( path, params ) => {
 	params = params || {};
