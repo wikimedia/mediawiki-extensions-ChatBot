@@ -57,7 +57,7 @@ ext.chatbot.ui.AISummary.prototype.processQueryAnswer = function ( response ) {
 		parsed = marked.parse( this.pendingMessage, { async: false } );
 		this.$summaryDiv.html( parsed );
 	} else if ( response.eventType === 'metadata' ) {
-		let status = response.metadata.status || '';
+		const status = response.metadata.status || '';
 		if ( status.toLowerCase() !== 'ok' ) {
 			this.showError( response.metadata.reason );
 			return;
