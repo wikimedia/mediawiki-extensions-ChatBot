@@ -7,7 +7,7 @@ ext.chatbot.ui.AISummary = function ( cfg ) {
 	ext.chatbot.ui.AISummary.super.call( this, cfg );
 	this.searchTerm = cfg.searchTerm;
 	this.results = cfg.results || [];
-	
+
 	this.serviceUrl = mw.config.get( 'chatBotServiceUrl' );
 	this.summary = '';
 	this.streamMetadata = [];
@@ -57,7 +57,8 @@ ext.chatbot.ui.AISummary.prototype.processQueryAnswer = function ( response ) {
 		parsed = marked.parse( this.pendingMessage, { async: false } );
 		this.$summaryDiv.html( parsed );
 	} else if ( response.eventType === 'metadata' ) {
-		if ( response.metadata.status !== 'OK' ) {
+		let status = response.metadata.status || '';
+		if ( status.toLowerCase() !== 'ok' ) {
 			this.showError( response.metadata.reason );
 			return;
 		}
