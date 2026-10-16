@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"G3raltJJ"
+			"G3raltJJ",
+			"PanWor"
 		]
 	},
 	"chatbot-desc": "ChatBot",
@@ -24,7 +25,7 @@
 	"chatbot-restore-session-text": "Przywróć sesję",
 	"chatbot-reference-list-button": "Pokaż odniesienia",
 	"chatbot-answer-processing": "Odpowiedź jest przetwarzana",
-	"chatbot-greeting": "Witaj, jak mogę ci pomóc?",
+	"chatbot-greeting": "Cześć, jak mogę Ci pomóc?",
 	"chatbot-api-error": "Błąd: $1",
 	"chatbot-api-load-error": "Błąd ładowania ChatBota: brak połączenia"
 }
