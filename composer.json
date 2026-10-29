@@ -16,7 +16,7 @@
 	"require": {
 		"composer/installers": "~1.0|~2",
 		"mwstake/mediawiki-component-commonuserinterface": "~9",
-		"mwstake/mediawiki-component-token-authenticator": "~1"
+		"mwstake/mediawiki-component-token-authenticator": "~2"
 	},
 	"require-dev": {
 		"mediawiki/mediawiki-codesniffer": "52.0.0",
