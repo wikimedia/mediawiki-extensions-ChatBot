@@ -6,6 +6,7 @@
 	},
 	"chatbot-desc": "ChatBot",
 	"chatbot-headline-text": "Chatbot",
+	"chatbot-input-placeholder": "E Message schécken",
 	"chatbot-send-button-title": "Schécken",
 	"chatbot-export-button-title": "Chat exportéieren",
 	"chatbot-export-popup-title": "Chat exportéieren",
@@ -15,7 +16,10 @@
 	"chatbot-export-error": "Näischt fir z'exportéieren",
 	"chatbot-close-button-title": "Chat zoumaachen an Chathistorique läschen",
 	"chatbot-copy-button-title": "Äntwert kopéieren",
+	"chatbot-banner-help-button": "Op den FAQ goen",
+	"chatbot-banner-close-button": "Informatiounsbanner zoumaachen",
 	"chatbot-restore-session-text": "Sessioun restauréieren",
+	"chatbot-reference-list-button": "Referenze weisen",
 	"chatbot-greeting": "Moien, woubäi kann ech Iech hëllefen?",
 	"chatbot-api-error": "Feeler: $1",
 	"chatbot-missing-config": "Feeler beim Luede vun ChatBot: Konfiguratioun feelt",
@@ -31,5 +35,7 @@
 	"chatbot-search-ai-result-expand-btn-label": "Méi liesen",
 	"chatbot-restore-error": "D'Sessioun konnt net restauréiert ginn, et gëtt eng nei Sessioun gestart",
 	"chatbot-save-page-button-title": "Äntwert als Wikisäit späicheren",
-	"chatbot-save-page-saved-label": "Message ënner [[$1|$2]] gespäichert"
+	"chatbot-save-page-saved-label": "Message ënner [[$1|$2]] gespäichert",
+	"chatbot-instance-status-limit-reached": "D'Limitt gouf erreecht.",
+	"chatbot-instance-status-days-until-reset": "D'Limitt gëtt an {{PLURAL:$1|$1 Dag|$1 Deeg}} zeréckgesat."
 }
