@@ -56,6 +56,7 @@ ext.chatbot.ui.AISummary.prototype.processQueryAnswer = function ( response ) {
 
 		parsed = marked.parse( this.pendingMessage, { async: false } );
 		this.$summaryDiv.html( parsed );
+		this.setExpandButton();
 	} else if ( response.eventType === 'metadata' ) {
 		const status = response.metadata.status || '';
 		if ( status.toLowerCase() !== 'ok' ) {
@@ -72,7 +73,7 @@ ext.chatbot.ui.AISummary.prototype.processQueryAnswer = function ( response ) {
 };
 
 ext.chatbot.ui.AISummary.prototype.isNoSummary = function ( message ) {
-	if ( message.includes( 'nosummary' ) ) {
+	if ( message && message.includes( 'nosummary' ) ) {
 		this.inhibitReception = true;
 		this.showEmpty();
 		return true;
@@ -81,6 +82,7 @@ ext.chatbot.ui.AISummary.prototype.isNoSummary = function ( message ) {
 };
 
 ext.chatbot.ui.AISummary.prototype.showEmpty = function () {
+	this.stopObservingSummary();
 	this.$content = null;
 	this.$element.empty();
 	this.$element.removeClass( 'loading' );
@@ -105,6 +107,12 @@ ext.chatbot.ui.AISummary.prototype.initContainer = function () {
 	this.$summaryCnt.append( this.$summaryDiv );
 	$( this.$summaryCnt ).addClass( 'short' );
 	this.$content.append( this.$summaryCnt );
+	this.expandButton = null;
+	this.summaryResizeObserver = new ResizeObserver( () => {
+		this.setExpandButton();
+	} );
+	this.summaryResizeObserver.observe( this.$summaryDiv[ 0 ] );
+	this.summaryResizeObserver.observe( this.$summaryCnt[ 0 ] );
 };
 
 ext.chatbot.ui.AISummary.prototype.showLoadingSkeleton = function () {
@@ -115,7 +123,7 @@ ext.chatbot.ui.AISummary.prototype.showLoadingSkeleton = function () {
 };
 
 ext.chatbot.ui.AISummary.prototype.showError = function ( error ) {
-	console.log( 'chatbot-external-error-' + error.trim()  );
+	this.stopObservingSummary();
 	const msg = mw.message( 'chatbot-external-error-' + error );
 	if ( msg.exists() ) {
 		error = msg.text();
@@ -136,7 +144,17 @@ ext.chatbot.ui.AISummary.prototype.setHeading = function () {
 };
 
 ext.chatbot.ui.AISummary.prototype.setExpandButton = function () {
-	if ( this.$summaryDiv.outerHeight() < 120 ) {
+	if ( !this.$summaryCnt.hasClass( 'short' ) ) {
+		return;
+	}
+	const summary = this.$summaryCnt[ 0 ];
+	const hasOverflow = summary.scrollHeight > summary.clientHeight;
+	this.$summaryCnt.toggleClass( 'expandable', hasOverflow );
+	if ( this.expandButton ) {
+		this.expandButton.toggle( hasOverflow );
+		return;
+	}
+	if ( !hasOverflow ) {
 		return;
 	}
 	this.expandButton = new OO.ui.ButtonWidget( {
@@ -146,9 +164,23 @@ ext.chatbot.ui.AISummary.prototype.setExpandButton = function () {
 	} );
 	this.expandButton.connect( this, {
 		click: () => {
-			this.expandButton.toggle();
-			$( this.$summaryCnt ).removeClass( 'short' );
+			this.stopObservingSummary();
+			this.expandButton.toggle( false );
+			this.$summaryCnt.removeClass( 'short expandable' );
 		}
 	} );
 	this.$content.append( this.expandButton.$element );
+};
+
+ext.chatbot.ui.AISummary.prototype.stopObservingSummary = function () {
+	if ( this.summaryResizeObserver ) {
+		this.summaryResizeObserver.disconnect();
+		this.summaryResizeObserver = null;
+	}
+};
+
+ext.chatbot.ui.AISummary.prototype.dispose = function () {
+	this.inhibitReception = true;
+	this.stopObservingSummary();
+	this.$element.remove();
 };
