@@ -77,7 +77,10 @@
 			/* Fixed height to avoid auto-sizing moving the results out of position */
 			height: 125px;
 			overflow: hidden;
-			mask-image: linear-gradient( to bottom, black 85%, transparent 100% );
+
+			&.expandable {
+				mask-image: linear-gradient( to bottom, black 85%, transparent 100% );
+			}
 		}
 	}
 

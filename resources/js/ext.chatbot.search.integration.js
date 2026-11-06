@@ -9,6 +9,10 @@ $( () => {
 		let $aiContainerCnt = null;
 
 		function hideSummary() {
+			if ( aiSummaryInstance ) {
+				aiSummaryInstance.dispose();
+				aiSummaryInstance = null;
+			}
 			if ( $aiContainerCnt ) {
 				$aiContainerCnt.empty();
 			}
